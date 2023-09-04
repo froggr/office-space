@@ -7,12 +7,12 @@ console.log('Script started successfully');
 let currentPopup: any = undefined;
 
 const arcadeGames = [
-    {name: 'pooltable', site:'https://bloob.io/8ballpool/'},
-    {name: 'duckhunt', site:'https://duckhuntjs.com/'},
-    {name: 'snesparty', site:'https://app.kosmi.io/room/r0bqoh'},
-    {name: 'mario', site:'https://www.retrogames.cc/embed/42845-super-mario-all-stars-nes.html'},
-    {name: 'doom', site:'https://en.gameslol.net/data/dosbox/index.php?url=doom.zip'},
-    {name: 'tmnt', site:''}
+    {name: 'pools', site:'https://bloob.io/8ballpool/'},
+    {name: 'duckhunts', site:'https://duckhuntjs.com/'},
+    {name: 'snespartys', site:'https://app.kosmi.io/room/r0bqoh'},
+    {name: 'marios', site:'https://www.retrogames.cc/embed/42845-super-mario-all-stars-nes.html'},
+    {name: 'dooms   ', site:'https://en.gameslol.net/data/dosbox/index.php?url=doom.zip'},
+    {name: 'tmnts', site:''}
 ]
 
 let currentGame: any = null;
@@ -34,7 +34,7 @@ WA.onInit().then(() => {
 
     for(let game of arcadeGames) {
         WA.room.area.onEnter(`${game.name}`).subscribe(async () => {
-            
+            console.log(`Switching to ${game.name}`);
             currentGame = await WA.ui.website.open({
                 url: game.site,
                 position: {
