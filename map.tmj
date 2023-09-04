@@ -896,7 +896,7 @@
          "name":"door1open",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":43,
          "x":0,
          "y":0

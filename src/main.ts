@@ -49,7 +49,9 @@ WA.onInit().then(() => {
             currentGame.position.vertical = "top";
 
         })
-        WA.room.area.onLeave(`${game.name}`).subscribe(currentGame.close());
+        WA.room.area.onLeave(`${game.name}`).subscribe(()=>{
+            if(currentGame)currentGame.close()
+        });
     }
 
 
